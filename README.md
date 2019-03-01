@@ -1,3 +1,5 @@
+[![](https://img.shields.io/badge/Protected_by-Hound-a873d1.svg)](https://houndci.com)
+
 # SendIT Application
 
 SendIT application provides a courier service that helps users deliver
