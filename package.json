@@ -1,0 +1,37 @@
+{
+  "name": "sendit-frontend-reactjs",
+  "version": "1.0.0",
+  "description": "A courier service that helps users deliver parcels to different destinations",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ODINAKACHUKWU/sendit-frontend-reactjs.git"
+  },
+  "author": "Odinakachukwu Ezeobika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ODINAKACHUKWU/sendit-frontend-reactjs/issues"
+  },
+  "homepage": "https://github.com/ODINAKACHUKWU/sendit-frontend-reactjs#readme",
+  "dependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  }
+}

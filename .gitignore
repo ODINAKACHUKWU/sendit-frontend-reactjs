@@ -1,0 +1,11 @@
+# Dependency directory
+node_modules
+
+# Coverage directory
+coverage
+
+# Coverage output
+.nyc_output
+
+# Environment variables
+.env
