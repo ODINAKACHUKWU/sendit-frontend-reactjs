@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  padding: 16px 100px;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #1b1464;
+  color: #ffffff;
+  position: fixed;
+  left: 0;
+  right: 0;
+
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.header-logo {
+  align-items: baseline;
+  display: flex;
+}
+
+.header-buttons {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
