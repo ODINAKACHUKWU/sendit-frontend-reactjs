@@ -9,3 +9,6 @@ coverage
 
 # Environment variables
 .env
+
+# Production build directory 
+build
