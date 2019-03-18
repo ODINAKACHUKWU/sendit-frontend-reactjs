@@ -1,0 +1,39 @@
+#home-sign-up {
+  font-size: 12px;
+  border-radius: 10px;
+  color: white;
+  background-color: orangered;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Arial;
+  font-weight: 500;
+  padding: 10px 20px;
+}
+
+#home-sign-up:hover {
+  opacity: 0.9;
+}
+
+img.home {
+  width: 100%;
+  height: auto;
+}
+
+.home-container {
+  padding: 100px;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #1b1464;
+}
+
+.left {
+  margin-top: 50px;
+}
+
+.left > p {
+  font-size: 1.4em;
+  margin-bottom: 30px;
+}

@@ -1,9 +1,8 @@
 import React from "react";
 import Button from "./common/Button";
-import "../styles/App.css";
 import "../styles/Header.css";
 
-const Header = () => {
+export const HomePageNavBar = () => {
   return (
     <header className="header">
       <div className="header-logo">
@@ -11,20 +10,36 @@ const Header = () => {
       </div>
       <div className="header-buttons">
         <Button
-          path="/"
+          path="/signup"
           classId={"sign-up"}
           text={"SIGN UP"}
-          className={"fa fa-sign-in"}
+          className={"fa fa-user-plus"}
         />
         <Button
           path="/signin"
           classId={"sign-in"}
           text={"SIGN IN"}
-          className={"fa fa-user-plus"}
+          className={"fa fa-sign-in"}
         />
       </div>
     </header>
   );
 };
 
-export default Header;
+export const PageHeader = ({ path, classId, text, className }) => {
+  return (
+    <header className="header">
+      <div className="header-logo">
+        <img src="src/assets/logo.png" alt="SendIT Logo" className="logo" />
+      </div>
+      <div>
+        <Button
+          path={path}
+          classId={classId}
+          text={text}
+          className={className}
+        />
+      </div>
+    </header>
+  );
+};
