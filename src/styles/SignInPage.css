@@ -1,0 +1,27 @@
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    padding: 30px;
+}
+
+.form-bg {
+    background-color: #e8e8e8;
+}
+
+.sign-in-btn {
+    background-color: #1b1464;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.sign-in-btn:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,46 @@
+input {
+  width: 100%;
+  margin: 5px 0px 20px 0px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.form-container {
+  margin: auto;
+  display: flex;
+  width: 400px;
+}
+
+.fa-envelope,
+.fa-unlock-alt,
+.fa-user,
+.fa-phone {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+form {
+  margin: auto;
+  width: 100%;
+  height: auto;
+  padding: 40px 30px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.form-title {
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1em;
+}
+
+.sign-up-form {
+  margin-bottom: 30px;
+}

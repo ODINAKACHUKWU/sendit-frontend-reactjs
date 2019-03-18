@@ -7,6 +7,10 @@ parcels to different destinations. The aim of the application is to
 create a platform where users can make parcel delivery orders at the
 comfort of their homes. The courier quotes are based on weight
 categories.
+<br />
+<br />
+
+<img width="1440" alt="SendIT-Homepage-screenshot" src="./src/assets/homepage.png">
 
 # Table of Contents
 

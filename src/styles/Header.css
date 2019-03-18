@@ -28,3 +28,23 @@
   grid-gap: 20px;
   grid-template-columns: repeat(2, 1fr);
 }
+
+#sign-in,
+#sign-up {
+  font-size: 12px;
+  border-radius: 50px;
+  color: white;
+  background-color: #1b1464;
+  border: 1px solid white;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Arial;
+  font-weight: 500;
+  padding: 10px 20px;
+}
+
+#sign-in:hover,
+#sign-up:hover {
+  opacity: 0.8;
+}
