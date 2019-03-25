@@ -2,10 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const Button = ({ path, classId, text, className }) => {
+const Button = ({
+  path, classId, text, className,
+}) => {
   return (
     <Link to={path} id={classId}>
-      {text} <i className={className} />
+      {text}
+      {" "}
+      <i className={className} />
     </Link>
   );
 };

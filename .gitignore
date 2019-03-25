@@ -4,11 +4,9 @@ node_modules
 # Coverage directory
 coverage
 
-# Coverage output
-.nyc_output
-
 # Environment variables
 .env
 
-# Production build directory 
-build
+# Production build/dist directory 
+build/
+dist

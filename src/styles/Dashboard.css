@@ -1,0 +1,17 @@
+.menu {
+  background-color: #035774;
+  height: -webkit-fill-available;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.dashboard-icon {
+    color: #ffffff;
+    font-size: 1.3em;
+    padding: 20px 0px;
+}

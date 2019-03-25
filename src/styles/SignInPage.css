@@ -20,6 +20,9 @@
     color: #ffffff;
     border: none;
     cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
 }
 
 .sign-in-btn:hover {
