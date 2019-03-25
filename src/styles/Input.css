@@ -41,6 +41,15 @@ form {
   font-size: 1em;
 }
 
+.form-footer a {
+  text-decoration: none;
+  color: #1b1464;
+}
+
+.form-footer a:hover {
+  color: #ff4500;
+}
+
 .sign-up-form {
   margin-bottom: 30px;
 }

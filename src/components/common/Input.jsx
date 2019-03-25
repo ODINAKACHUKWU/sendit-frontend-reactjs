@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Input = ({ type, name, value, className, placeholder, onChange }) => {
+const Input = ({
+  type, name, value, className, placeholder, onChange,
+}) => {
   return (
     <input
       type={type}
@@ -10,17 +12,16 @@ const Input = ({ type, name, value, className, placeholder, onChange }) => {
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      required
     />
   );
 };
 
 Input.propTypes = {
   type: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   value: PropTypes.string,
   className: PropTypes.string,
-  placeholder: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   onChange: PropTypes.func,
 };
 

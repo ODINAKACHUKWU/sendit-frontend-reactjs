@@ -1,6 +1,6 @@
 import React from "react";
-import { HomePageNavBar } from "../components/NavBar";
-import Footer from "../components/Footer";
+import { HomePageNavBar } from "../components/common/NavBar";
+import Footer from "../components/common/Footer";
 import Button from "../components/common/Button";
 
 import "../styles/Homepage.css";
@@ -20,9 +20,9 @@ const HomePage = () => {
             </p>
             <Button
               path="/signup"
-              classId={"home-sign-up"}
-              text={"SIGN UP"}
-              className={"fa fa-user-plus"}
+              classId="home-sign-up"
+              text="SIGN UP"
+              className="fa fa-user-plus"
             />
           </div>
           <div className="col-7">
