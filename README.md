@@ -1,4 +1,5 @@
 [![](https://img.shields.io/badge/Protected_by-Hound-a873d1.svg)](https://houndci.com)
+[![CircleCI](https://circleci.com/gh/ODINAKACHUKWU/sendit-frontend-reactjs/tree/develop.svg?style=svg)](https://circleci.com/gh/ODINAKACHUKWU/sendit-frontend-reactjs/tree/develop)
 
 # SendIT Application
 
