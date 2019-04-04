@@ -1,4 +1,4 @@
-.menu-list a {
+.menu-list span {
   text-decoration: none;
   display: block;
   padding: 10px;
@@ -9,8 +9,21 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.menu-list a:hover {
+.menu-list span:hover {
   background-color: #0099cc;
   cursor: pointer;
   border-radius: 0 25px 25px 0;
+}
+
+.menu-list span:active {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 0 25px 25px 0;
+}
+
+.fa-bar-chart,
+.fa-list,
+.fa-plus-circle {
+  font-size: 14px;
+  padding-right: 10px;
 }

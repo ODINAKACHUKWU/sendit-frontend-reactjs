@@ -1,9 +1,13 @@
 input {
   width: 100%;
-  margin: 5px 0px 20px 0px;
+  margin-top: 5px;
   padding: 12px;
   border: 1px solid #ccc;
   font-size: 14px;
+}
+
+.input-group {
+  margin: 15px 0px;
 }
 
 .form-container {
@@ -52,4 +56,18 @@ form {
 
 .sign-up-form {
   margin-bottom: 30px;
+}
+
+.error {
+  display: block;
+  width: 100%;
+  background-color: rgb(255, 224, 224);
+  color: red;
+  padding: 7px;
+  margin-top: 3px;
+  border-radius: 5px;
+}
+
+.fa-exclamation-circle {
+  padding-right: 10px;
 }
