@@ -1,5 +1,6 @@
 [![](https://img.shields.io/badge/Protected_by-Hound-a873d1.svg)](https://houndci.com)
 [![CircleCI](https://circleci.com/gh/ODINAKACHUKWU/sendit-frontend-reactjs/tree/develop.svg?style=svg)](https://circleci.com/gh/ODINAKACHUKWU/sendit-frontend-reactjs/tree/develop)
+[![Coverage Status](https://coveralls.io/repos/github/ODINAKACHUKWU/sendit-frontend-reactjs/badge.svg?branch=develop)](https://coveralls.io/github/ODINAKACHUKWU/sendit-frontend-reactjs?branch=develop)
 
 # SendIT Application
 
