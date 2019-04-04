@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage should render homepage 1`] = `
+<div
+  className="row content"
+>
+  <HomePageNavBar />
+  <div
+    className="main content"
+  >
+    <div
+      className="home-container"
+    >
+      <div
+        className="col-5 left"
+      >
+        <h1>
+          Courier Services
+        </h1>
+        <p>
+          SendIT is a courier service that helps users deliver parcels to different destinations. Courier quotes are based on weight categories. Sign up to start enjoying our delivery service!
+        </p>
+        <Button
+          classId="home-sign-up"
+          className="fa fa-user-plus"
+          path="/signup"
+          text="SIGN UP"
+        />
+      </div>
+      <div
+        className="col-7"
+      >
+        <img
+          alt="Happy client"
+          className="home"
+          src="src/assets/home.png"
+        />
+      </div>
+    </div>
+  </div>
+  <Footer />
+</div>
+`;
