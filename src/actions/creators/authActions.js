@@ -1,8 +1,8 @@
 import axios from "axios";
-import jwtDecode from "jwt-decode";
 import toast from "../../utils/toast";
 import TYPES from "../constants";
 import BASE_URL from "../../utils/constant";
+import jwt from "../../utils/jwt";
 
 const isProcessing = bool => ({
   type: TYPES.IS_PROCESSING,
@@ -33,7 +33,7 @@ const userAuthRequest = userData => async (dispatch) => {
     const { token, message } = response.data;
     localStorage.setItem("token", token);
     toast.success(message);
-    const user = jwtDecode(token);
+    const user = jwt.decode(token);
     dispatch(userAuthSuccess(user));
   } catch (error) {
     const errorMessage = error.response.data.message;
@@ -48,7 +48,8 @@ const userLogOutRequest = () => async (dispatch) => {
   try {
     dispatch(isProcessing(true));
     dispatch(logoutUser());
-    localStorage.removeItem("token");
+    const items = ["token", "Small", "Medium", "Large"];
+    items.map(item => localStorage.removeItem(item));
     toast.success("You are now logged out");
   } catch (error) {
     dispatch(userAuthFailure(error));

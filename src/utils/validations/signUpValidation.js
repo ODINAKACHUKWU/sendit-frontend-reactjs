@@ -1,5 +1,7 @@
+/* eslint-disable max-len */
 import validator from "validator";
 import isEmpty from "is-empty";
+import nameValidation from "./nameValidation";
 
 const signupValidation = (data) => {
   const {
@@ -19,23 +21,9 @@ const signupValidation = (data) => {
   const trimmedPassword = password.trim();
   const trimmedConfirmPassword = confirmPassword.trim();
 
-  const verifyName = (nameField, identifier) => {
-    let nameInput = "First";
-    let error = "";
-    if (identifier.toLowerCase() === "l") nameInput = "Last";
-    if (!validator.isEmpty(nameField)) {
-      if (!validator.isAlpha(nameField)) {
-        error = `${nameInput} name must contain only alphabets`;
-      }
-    } else {
-      error = `${nameInput} name is required`;
-    }
-    return error;
-  };
+  if (nameValidation.verifyName(trimmedFirstName, "f")) errors.firstName = nameValidation.verifyName(trimmedFirstName, "f");
 
-  if (verifyName(trimmedFirstName, "f")) errors.firstName = verifyName(trimmedFirstName, "f");
-
-  if (verifyName(trimmedLastName, "l")) errors.lastName = verifyName(trimmedLastName, "l");
+  if (nameValidation.verifyName(trimmedLastName, "l")) { errors.lastName = nameValidation.verifyName(trimmedLastName, "l"); }
 
   if (!validator.isEmpty(trimmedPhoneNumber)) {
     if (!validator.isMobilePhone(trimmedPhoneNumber)) {

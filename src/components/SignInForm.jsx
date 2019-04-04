@@ -76,7 +76,7 @@ class SignInForm extends Component {
           <div className="form-title">
             <p>Log in to your account</p>
           </div>
-          <div>
+          <div className="input-group">
             <label>
               <i className="fa fa-envelope" />
               Email
@@ -88,9 +88,14 @@ class SignInForm extends Component {
               placeholder="Enter email address"
               onChange={this.handleChange}
             />
-            {errors.email && <span>{errors.email}</span>}
+            {errors.email && (
+              <span className="error">
+                <i className="fa fa-exclamation-circle" />
+                {errors.email}
+              </span>
+            )}
           </div>
-          <div>
+          <div className="input-group">
             <label>
               <i className="fa fa-unlock-alt" />
               Password
@@ -102,7 +107,12 @@ class SignInForm extends Component {
               placeholder="Enter password"
               onChange={this.handleChange}
             />
-            {errors.password && <span>{errors.password}</span>}
+            {errors.password && (
+              <span className="error">
+                <i className="fa fa-exclamation-circle" />
+                {errors.password}
+              </span>
+            )}
           </div>
           <div>
             <button

@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import toastr from "toastr";
-import jwtDecode from "jwt-decode";
 import "toastr/build/toastr.min.css";
 import BaseRoute from "./routes/BaseRoute";
 import store from "./store";
 import auth from "./utils/auth";
+import jwt from "./utils/jwt";
 import { userAuthSuccess } from "./actions/creators/authActions";
 
 toastr.options = {
@@ -22,13 +22,13 @@ toastr.options = {
 
 if (auth.authenticate()) {
   const token = localStorage.getItem("token");
-  const user = jwtDecode(token);
+  const user = jwt.decode(token);
   store.dispatch(userAuthSuccess(user));
 }
 
 const App = () => {
   return (
-    <Provider store={store()}>
+    <Provider store={store}>
       <BaseRoute />
     </Provider>
   );
