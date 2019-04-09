@@ -9,4 +9,7 @@ export default {
     toastr.remove();
     toastr.error(message, "SendIT Courier Service");
   },
+  clear: () => {
+    toastr.remove();
+  },
 };

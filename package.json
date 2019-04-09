@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "test": "jest --coverage"
+    "test": "jest  --coverage"
   },
   "jest": {
     "snapshotSerializers": [
@@ -38,6 +38,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-md-spinner": "^0.3.0",
+    "react-modal": "^3.8.1",
     "react-redux": "^6.0.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
@@ -52,6 +53,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.5",
+    "coveralls": "^3.0.3",
     "css-loader": "^2.1.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",

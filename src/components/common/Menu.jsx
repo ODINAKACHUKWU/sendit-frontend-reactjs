@@ -1,57 +1,45 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import "../../styles/Menu.css";
 
-const Menu = ({
-  togglePage,
-}) => {
+const Menu = () => {
   return (
     <div className="menu-list">
-      <span id="overview" onClick={togglePage}>
+      <Link to="/overview">
         <i className="fa fa-bar-chart" />
         {" "}
         Overview
-      </span>
-      <span id="orders" onClick={togglePage}>
+      </Link>
+      <Link to="/orders">
         <i className="fa fa-list" />
         {" "}
         Parcel Orders
-      </span>
-      <span id="create-order" onClick={togglePage}>
+      </Link>
+      <Link to="/create-order">
         <i className="fa fa-plus-circle" />
         {" "}
         Create Delivery Order
-      </span>
+      </Link>
     </div>
   );
 };
 
-const AdminMenu = ({
-  togglePage,
-}) => {
+const AdminMenu = () => {
   return (
     <div className="menu-list">
-      <span id="overview" onClick={togglePage}>
-        <i className="fa fa-eye" />
+      <Link to="/customers">
+        <i className="fa fa-user" />
         {" "}
         Customers
-      </span>
-      <span id="orders" onClick={togglePage}>
+      </Link>
+      <Link to="/customers-orders">
         <i className="fa fa-list" />
         {" "}
         Orders
-      </span>
+      </Link>
     </div>
   );
-};
-
-Menu.propTypes = {
-  togglePage: PropTypes.func,
-};
-
-AdminMenu.propTypes = {
-  togglePage: PropTypes.func,
 };
 
 export { Menu, AdminMenu };

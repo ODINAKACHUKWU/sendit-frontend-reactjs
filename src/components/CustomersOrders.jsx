@@ -3,17 +3,19 @@ import ParcelCard from "./common/ParcelCard";
 
 import "../styles/ParcelOrder.css";
 
-const ParcelOrder = () => {
+const CustomersOrders = () => {
   return (
     <Fragment>
       <div className="row heading">
-        <h2>Parcel Orders</h2>
+        <h2>Orders</h2>
       </div>
       <div className="row">
+        <ParcelCard />
+        <ParcelCard />
         <ParcelCard />
       </div>
     </Fragment>
   );
 };
 
-export default ParcelOrder;
+export default CustomersOrders;

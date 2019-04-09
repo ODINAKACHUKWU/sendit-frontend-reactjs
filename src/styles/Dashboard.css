@@ -10,6 +10,11 @@
     bottom: 0;
 }
 
+.dashboard-icon .fa-home {
+  padding-right: 10px;
+  font-size: 1.3rem;
+}
+
 .dashboard-icon {
     color: #ffffff;
     font-size: 1.3em;
