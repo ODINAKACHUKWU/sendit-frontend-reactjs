@@ -61,7 +61,7 @@ class SignUpForm extends Component {
       registerUser(userData).then(() => {
         const { isAuthenticated, history: { push } } = this.props;
         if (isAuthenticated) {
-          push("/dashboard");
+          push("/overview");
         }
       });
     }

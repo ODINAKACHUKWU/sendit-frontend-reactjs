@@ -1,0 +1,18 @@
+.Modal {
+  width: 40%;
+  max-height: 450px;
+  margin: 15% auto;
+  outline: none;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 50px;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}

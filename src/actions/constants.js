@@ -9,6 +9,9 @@ const TYPES = keymirror({
   SET_USER_OVERVIEW: null,
   IS_CREATING: null,
   CREATE_PARCEL_ORDER: null,
+  FETCH_USER_PARCELS: null,
+  FETCH_PARCEL_DETAILS: null,
+  UPDATE_DESTINATION: null,
 });
 
 export default TYPES;

@@ -4,27 +4,12 @@ import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { PageHeader } from "./NavBar";
 import Footer from "./Footer";
-import { Menu } from "./Menu";
-import Overview from "../Overview";
-import ParcelOrder from "../ParcelOrder";
-import CreateOrder from "../CreateOrder";
+import { Menu, AdminMenu } from "./Menu";
 import { userLogOutRequest } from "../../actions/creators/authActions";
 
 import "../../styles/Dashboard.css";
 
 class Dashboard extends Component {
-  state = {
-    activePage: "overview",
-  }
-
-  togglePage = (event) => {
-    event.persist();
-    this.setState(prevState => ({
-      ...prevState,
-      activePage: event.target.id,
-    }));
-  }
-
   logOut = () => {
     const { logOutUser, history: { push } } = this.props;
 
@@ -34,8 +19,7 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { user: { fullName } } = this.props;
-    const { activePage } = this.state;
+    const { user: { category, fullName }, children } = this.props;
     const user = `Welcome ${fullName}!`;
     return (
       <div className="row">
@@ -51,15 +35,12 @@ class Dashboard extends Component {
           <div className="col-3 menu">
             <div className="dashboard-icon">
               <i className="fa fa-home" />
-              {" "}
               Dashboard
             </div>
-            <Menu togglePage={this.togglePage} />
+            {category === "Regular" ? <Menu /> : <AdminMenu />}
           </div>
           <div className="col-9">
-            {activePage === "overview" && <Overview />}
-            {activePage === "orders" && <ParcelOrder />}
-            {activePage === "create-order" && <CreateOrder />}
+            {children}
           </div>
         </div>
         <Footer />
@@ -76,6 +57,7 @@ Dashboard.propTypes = {
   user: PropTypes.shape({
     fullName: PropTypes.string,
   }),
+  children: PropTypes.instanceOf,
 };
 
 const mapStateToProps = ({

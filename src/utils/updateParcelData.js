@@ -35,12 +35,22 @@ export default {
         item,
         pickupLocation: `${senderStreet}, ${senderCity}, ${senderState}`,
         destination: `${street}, ${city}, ${state}`,
-        schedule: `${date} ${time}`,
+        schedule: `${date}; ${time}`,
         presentLocation: `${senderStreet}, ${senderCity}, ${senderState}`,
         price,
         status,
       };
     }
     return "No parcel data is provided";
+  },
+
+  updateDestination: (destination) => {
+    if (destination) {
+      const { street, city, state } = destination;
+      return {
+        destination: `${street}, ${city}, ${state}`,
+      };
+    }
+    return "No destination is provided";
   },
 };

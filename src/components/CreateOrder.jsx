@@ -1,14 +1,14 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import Modal from "react-modal";
 import PropTypes from "prop-types";
-import MDSpinner from "react-md-spinner";
 import Input from "./common/Input";
 import parcelValidation from "../utils/validations/parcelValidation";
+import VerifyParcel from "./VerifyParcel";
 
 import "../styles/CreateOrder.css";
 import "../styles/Input.css";
-import createOrderRequest from "../actions/creators/parcelActions";
-import updateParcelData from "../utils/updateParcelData";
+import "../styles/Modal.css";
 
 class CreateOrder extends Component {
   initialState = {
@@ -31,6 +31,7 @@ class CreateOrder extends Component {
       status: "Not delivered",
     },
     errors: {},
+    modalIsOpen: false,
   };
 
   state = { ...this.initialState };
@@ -65,12 +66,14 @@ class CreateOrder extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { parcelData } = this.state;
-    const { createParcel } = this.props;
-    const updatedParcelData = updateParcelData.updateData(parcelData);
     if (this.isValid()) {
-      createParcel(updatedParcelData);
+      this.setState({ modalIsOpen: true });
     }
+  };
+
+  handleCancel = (event) => {
+    event.preventDefault();
+    this.setState({ modalIsOpen: false });
   };
 
   render() {
@@ -93,6 +96,7 @@ class CreateOrder extends Component {
         time,
       },
       errors,
+      modalIsOpen,
     } = this.state;
 
     const { isCreating } = this.props;
@@ -439,20 +443,30 @@ class CreateOrder extends Component {
                 type="submit"
                 className="sign-in-btn"
                 id="create-order-btn"
-                disabled={isCreating}
               >
-                {isCreating ? <MDSpinner /> : "Create Order"}
+                Create Order
               </button>
             </div>
           </form>
         </div>
+        <Modal
+          isOpen={modalIsOpen}
+          className="Modal"
+          overlayClassName="Overlay"
+        >
+          <VerifyParcel
+            // eslint-disable-next-line react/destructuring-assignment
+            parcelData={this.state.parcelData}
+            handleCancel={this.handleCancel}
+            isCreating={isCreating}
+          />
+        </Modal>
       </Fragment>
     );
   }
 }
 
 CreateOrder.propTypes = {
-  createParcel: PropTypes.func,
   isCreating: PropTypes.bool,
 };
 
@@ -461,11 +475,6 @@ const mapStateToProps = ({ parcel: { isCreating, error } }) => ({
   error,
 });
 
-const mapDispatchToProps = dispatch => ({
-  createParcel: parcelData => dispatch(createOrderRequest(parcelData)),
-});
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
 )(CreateOrder);

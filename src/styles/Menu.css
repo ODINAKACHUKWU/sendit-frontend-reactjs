@@ -1,4 +1,4 @@
-.menu-list span {
+.menu-list a {
   text-decoration: none;
   display: block;
   padding: 10px;
@@ -9,13 +9,13 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.menu-list span:hover {
+.menu-list a:hover {
   background-color: #0099cc;
   cursor: pointer;
   border-radius: 0 25px 25px 0;
 }
 
-.menu-list span:active {
+.menu-list a:active {
   background-color: #ffffff;
   color: #000000;
   border-radius: 0 25px 25px 0;

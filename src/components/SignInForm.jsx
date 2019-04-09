@@ -54,9 +54,13 @@ class SignInForm extends Component {
     const { loginUser } = this.props;
     if (this.isValid()) {
       loginUser(userData).then(() => {
-        const { isAuthenticated, history: { push } } = this.props;
+        const { isAuthenticated, history: { push }, user } = this.props;
         if (isAuthenticated) {
-          push("/dashboard");
+          if (user.category !== "Admin") {
+            push("/overview");
+          } else {
+            push("/customers");
+          }
         }
       });
     }
@@ -141,11 +145,17 @@ SignInForm.propTypes = {
   history: PropTypes.shape(),
   isAuthenticated: PropTypes.bool,
   isProcessing: PropTypes.bool.isRequired,
+  user: PropTypes.shape(),
 };
 
-const mapStateToProps = ({ auth: { isProcessing, isAuthenticated, error } }) => ({
+const mapStateToProps = ({
+  auth: {
+    isProcessing, isAuthenticated, user, error,
+  },
+}) => ({
   isProcessing,
   isAuthenticated,
+  user,
   error,
 });
 
