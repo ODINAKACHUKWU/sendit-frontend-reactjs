@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
+import logo from "../../assets/logo.png";
 
 import "../../styles/Header.css";
 
@@ -8,7 +9,7 @@ export const HomePageNavBar = () => {
   return (
     <header>
       <div className="header-logo">
-        <img src="src/assets/logo.png" alt="SendIT Logo" className="logo" />
+        <img src={logo} alt="SendIT Logo" className="logo" />
       </div>
       <div className="header-buttons">
         <Button
@@ -29,12 +30,17 @@ export const HomePageNavBar = () => {
 };
 
 export const PageHeader = ({
-  type, text, classId, className, user, onClick,
+  type,
+  text,
+  classId,
+  className,
+  user,
+  onClick,
 }) => {
   return (
     <header>
       <div className="header-logo">
-        <img src="src/assets/logo.png" alt="SendIT Logo" className="logo" />
+        <img src={logo} alt="SendIT Logo" className="logo" />
       </div>
       <div>
         <span className="user-name">{user}</span>
