@@ -2,6 +2,7 @@ import React from "react";
 import { HomePageNavBar } from "../components/common/NavBar";
 import Footer from "../components/common/Footer";
 import Button from "../components/common/Button";
+import homeImg from "../assets/home.png";
 
 import "../styles/Homepage.css";
 
@@ -27,7 +28,7 @@ const HomePage = () => {
           </div>
           <div className="col-7">
             <img
-              src="src/assets/home.png"
+              src={homeImg}
               alt="Happy client"
               className="home"
             />
