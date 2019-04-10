@@ -1,6 +1,6 @@
 .Modal {
   width: 40%;
-  max-height: 450px;
+  height: auto;
   margin: 15% auto;
   outline: none;
   background-color: white;
