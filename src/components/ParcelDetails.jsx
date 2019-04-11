@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import MDSpinner from "react-md-spinner";
-import { getUsersParcelDetails } from "../actions/creators/parcelActions";
+import { getUsersParcelDetails, cancelParcelRequest } from "../actions/creators/parcelActions";
 import ChangeDestination from "./ChangeDestination";
 
 import "../styles/ParcelDetails.css";
@@ -12,6 +12,7 @@ import "../styles/Modal.css";
 
 class ParcelDetails extends Component {
   state = {
+    status: "Cancelled",
     modalIsOpen: false,
   };
 
@@ -20,10 +21,14 @@ class ParcelDetails extends Component {
     fetchParcelDetails(id);
   }
 
-  handleCancel = (event) => {
-    event.preventDefault();
+  handleCancel = () => {
     this.setState({ modalIsOpen: false });
+  };
 
+  handleCancelParcel = () => {
+    const { status } = this.state;
+    const { cancelParcel, match: { params: { id } } } = this.props;
+    cancelParcel({ status }, id);
   };
 
   handleChangeDestination = (event) => {
@@ -45,7 +50,7 @@ class ParcelDetails extends Component {
               <Link to="/orders">
                 <i className="fa fa-arrow-left" title="Back to Orders page" />
               </Link>
-              <i className="fa fa-times" title="Cancel order" onClick={this.handleCancel} />
+              <i className="fa fa-times" title="Cancel order" onClick={this.handleCancelParcel} />
               <i className="fa fa-edit" title="Change destination" onClick={this.handleChangeDestination} />
             </div>
             <div className="row parcel-details">
@@ -110,12 +115,14 @@ ParcelDetails.propTypes = {
   match: PropTypes.shape(),
   isProcessing: PropTypes.bool,
   parcel: PropTypes.shape(),
+  cancelParcel: PropTypes.func,
 };
 
 const mapStateToProps = ({ parcel: { isProcessing, parcel } }) => ({ isProcessing, parcel });
 
 const mapDispatchToProps = dispatch => ({
   fetchParcelDetails: parcelId => dispatch(getUsersParcelDetails(parcelId)),
+  cancelParcel: (status, parcelId) => dispatch(cancelParcelRequest(status, parcelId)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ParcelDetails));

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-// import MDSpinner from "react-md-spinner";
+import MDSpinner from "react-md-spinner";
 import { changeDestinationRequest } from "../actions/creators/parcelActions";
 import Input from "./common/Input";
 import destinationValidation from "../utils/validations/destinationValidation";
@@ -56,16 +56,14 @@ class ChangeDestination extends Component {
     const updatedDestination = updateParcelData.updateDestination(destination);
     const {
       changeDestination,
+      handleCancel,
       match: {
         params: { id },
       },
     } = this.props;
     if (this.isValid()) {
       changeDestination(updatedDestination, id).then(() => {
-        const {
-          history: { push },
-        } = this.props;
-        push(`/parcel-details/${id}`);
+        handleCancel();
       });
     }
   };
@@ -76,7 +74,7 @@ class ChangeDestination extends Component {
       errors,
     } = this.state;
 
-    const { handleCancel } = this.props;
+    const { handleCancel, isProcessing } = this.props;
 
     return (
       <Fragment>
@@ -147,7 +145,9 @@ class ChangeDestination extends Component {
             </div>
           </div>
           <div>
-            <button>Change destination</button>
+            <button disabled={isProcessing}>
+              {isProcessing ? <MDSpinner /> : "Change destination"}
+            </button>
             <button onClick={handleCancel}>Cancel</button>
           </div>
         </form>
@@ -159,11 +159,12 @@ class ChangeDestination extends Component {
 ChangeDestination.propTypes = {
   changeDestination: PropTypes.func,
   handleCancel: PropTypes.func,
-  history: PropTypes.shape(),
   match: PropTypes.shape(),
+  isProcessing: PropTypes.bool,
 };
 
-const mapStateToProps = ({ parcel: { parcel } }) => ({
+const mapStateToProps = ({ isProcessing, parcel: { parcel } }) => ({
+  isProcessing,
   parcel,
 });
 

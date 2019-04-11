@@ -38,6 +38,47 @@ body {
   width: 100%;
 }
 
+@media screen and (max-width: 600px) {
+
+    .icon {
+        font-size: 2em;
+        color: white;
+        display: block;
+    }
+
+    /* .menu {
+        height: auto;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    #logout {
+        display: none;
+    }
+
+    .header {
+        display: flex;
+    }
+
+    .header a:first-child {
+        margin-left: 10px;
+    }
+
+    .table {
+        margin-top: 10px;
+    }
+
+    .modal-content {
+        width: 100%;
+    } */
+
+    /* #order-form {
+        overflow: scroll;
+    } */
+}
+
 @media only screen and (min-width: 600px) {
   /* For tablets: */
   .col-s-1 {
