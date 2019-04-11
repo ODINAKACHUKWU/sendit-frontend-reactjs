@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import MDSpinner from "react-md-spinner";
 
 import "../../styles/ParcelCard.css";
@@ -17,6 +17,17 @@ class ParcelCard extends Component {
     const {
       isFetching, parcels,
     } = this.props;
+    if (!parcels.length) {
+      return (
+        <Fragment>
+          {isFetching ? <MDSpinner /> : (
+            <div className="text-container">
+              <p>You do not have any parcel delivery order!</p>
+            </div>
+          )}
+        </Fragment>
+      );
+    }
     return (
       <Fragment>
         {isFetching ? <MDSpinner />
@@ -80,7 +91,7 @@ const mapDispatchToProps = dispatch => ({
   fetchParcels: () => dispatch(getUserParcelsRequest()),
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ParcelCard);
+)(ParcelCard));

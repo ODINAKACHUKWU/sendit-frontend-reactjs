@@ -12,6 +12,7 @@ const TYPES = keymirror({
   FETCH_USER_PARCELS: null,
   FETCH_PARCEL_DETAILS: null,
   UPDATE_DESTINATION: null,
+  CANCEL_PARCEL_ORDER: null,
 });
 
 export default TYPES;

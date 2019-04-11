@@ -33,7 +33,7 @@ exports[`HomePage should render homepage 1`] = `
         <img
           alt="Happy client"
           className="home"
-          src="src/assets/home.png"
+          src=""
         />
       </div>
     </div>

@@ -35,9 +35,14 @@ const fetchParcelDetails = parcel => ({
   parcel,
 });
 
-const updateDestination = destination => ({
+const updateDestination = parcel => ({
   type: TYPES.UPDATE_DESTINATION,
-  destination,
+  parcel,
+});
+
+const updateStatus = parcel => ({
+  type: TYPES.CANCEL_PARCEL_ORDER,
+  parcel,
 });
 
 const createOrderRequest = updatedParcelData => async (dispatch) => {
@@ -94,8 +99,27 @@ const changeDestinationRequest = (updatedDestination, parcelId) => async (dispat
       updatedDestination,
       setAuthorizationToken.setToken(),
     );
-    const { data: { destination }, message } = response.data;
-    dispatch(updateDestination(destination));
+    const { data, message } = response.data;
+    dispatch(updateDestination(data));
+    toast.success(message);
+  } catch (error) {
+    const errorMessage = error.response.data.message;
+    toast.error(errorMessage);
+  } finally {
+    dispatch(isProcessing(false));
+  }
+};
+
+const cancelParcelRequest = (status, parcelId) => async (dispatch) => {
+  dispatch(isProcessing(true));
+  try {
+    const response = await axios.put(
+      `${BASE_URL}/parcels/${parcelId}/cancel`,
+      status,
+      setAuthorizationToken.setToken(),
+    );
+    const { data, message } = response.data;
+    dispatch(updateStatus(data));
     toast.success(message);
   } catch (error) {
     const errorMessage = error.response.data.message;
@@ -106,5 +130,5 @@ const changeDestinationRequest = (updatedDestination, parcelId) => async (dispat
 };
 
 export {
-  createOrderRequest, getUserParcelsRequest, getUsersParcelDetails, changeDestinationRequest,
+  createOrderRequest, getUserParcelsRequest, getUsersParcelDetails, changeDestinationRequest, cancelParcelRequest,
 };

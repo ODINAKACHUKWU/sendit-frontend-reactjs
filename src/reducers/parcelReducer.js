@@ -41,6 +41,16 @@ export default (state = initialState, action) => {
       ...state,
       parcel: action.parcel,
     };
+  case TYPES.UPDATE_DESTINATION:
+    return {
+      ...state,
+      parcel: action.parcel,
+    };
+  case TYPES.CANCEL_PARCEL_ORDER:
+    return {
+      ...state,
+      parcel: action.parcel,
+    };
   default:
     return state;
   }
